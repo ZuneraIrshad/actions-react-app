@@ -15,7 +15,7 @@ jobs:
         with: 
           path: ~/.npm #npm on linux cache is stored home/npm | https://github.com/actions/cache
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-key: |
+          restore-keys: |
             ${{ runner.os }}-node-
 
       - name: Use NodeJs
