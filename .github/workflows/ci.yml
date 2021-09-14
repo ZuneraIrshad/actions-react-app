@@ -1,7 +1,7 @@
 name: CI 
 on:
   pull_request: 
-    branches: [develop]
+    branches: develop
 
 jobs:
   builds:
@@ -16,4 +16,4 @@ jobs:
       - run: npm run format:check
       - run: npm test -- --coverage
         env: 
-          CI: true 
+          CI: true
