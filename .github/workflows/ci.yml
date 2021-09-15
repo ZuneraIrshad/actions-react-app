@@ -60,7 +60,7 @@ jobs:
       - name: Deploy to Production
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx surge --project ./build --domian exotic-representative.surge.sh
-      -name: Upload Coverage Reports
+      - name: Upload Coverage Reports
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npx codecov
           env: 
