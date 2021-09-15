@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "commitLint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitLint -E HUSKY_GIT_PARAMS"
     }
   },
   "eslintConfig": {
