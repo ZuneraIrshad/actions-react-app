@@ -6,10 +6,18 @@ on:
     branches: develop
 
 jobs:
-  builds:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with: 
+          path: ~/.npm #npm on linux cache is stored home/npm | https://github.com/actions/cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Use NodeJs
         uses: actions/setup-node@v1
         with: 
