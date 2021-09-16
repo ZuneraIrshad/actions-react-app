@@ -7,4 +7,7 @@ jobs:
   slack-message: 
     runs-on: ubuntu-latest
     steps:
+      - name: Slack Message
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"New release ${{github.event.relaese.tag_name }} is out. <${{ github.event.release.html_url }}| link>"}' ${{ secrets.SLACK_WEBHOOK }} 
       
